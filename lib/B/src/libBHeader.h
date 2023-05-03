@@ -1,5 +1,8 @@
 #pragma once
 
-#include <libAHeader2.h>
+#include <iostream>
+#include <libAHeader1.h>
 
-const something hi = {1, 2, 3};
+CRGB getColourFromB() {
+    return getColourFromA1();
+}

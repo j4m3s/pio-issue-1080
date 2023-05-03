@@ -12,6 +12,7 @@
 #include <driver/gpio.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
+#include <iostream>
 #include <stdio.h>
 
 /* Can run 'make menuconfig' to choose the GPIO to blink,
@@ -64,6 +65,7 @@ void setup() {
     Serial.begin(115200);
     xTaskCreate(&blink_task, "blink_task", configMINIMAL_STACK_SIZE, NULL, 5, NULL);
     pinMode(LED_BUILTIN, OUTPUT);
+    std::cout << getColourFromB() << std::endl;
 }
 void loop() {
     digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
